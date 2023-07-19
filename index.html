@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To Do App</title>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            rel="stylesheet" />
+        <link href="styles.css" rel="stylesheet" />
+        <script src="main.js" defer></script>
+
+    </head>
+    <body>
+
+        <div class="todo-container">
+            <div class="date-hour">
+                <p id="date">Date</p>
+                <p id="hour">Hour</p>
+                <div class="btn">
+                    <div class="btn__indicator">
+                        <div class="btn__icon-container">
+                            <i class="btn__icon fa-solid fa-sun"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <button id="mybtn" onclick="darkmode()">Dark</button>
+            -->
+            <header>
+                <h1>To Do List</h1>
+            </header>
+
+            <!-- Add Todo -->
+            <form action id="todo-form">
+                <p>Add Your Task Here</p>
+                <div class="form-control">
+                    <input type="text" id="todo-input"
+                        placeholder="Type here your next task">
+                    <button type="submit">
+                        <i class="fa-thin fa-plus"></i>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Edit The Tasks -->
+            <form action id="edit-form" class="hide">
+                <p>Edit Your Task</p>
+                <div class="form-control">
+                    <input type="text" id="edit-input"
+                        placeholder="Type here about your next task">
+                    <button type="submit">
+                        <i class="fa-solid fa-check-double"></i>
+                    </button>
+                </div>
+
+                <button type="button" id="cancel-edit-btn">Cancel</button>
+            </form>
+
+            <!-- Todo List -->
+            <div class="todo-list" id="todo-list">
+                <div class="todo">
+                    <h3>Your tasks list goes here</h3>
+                    <button class="finish-todo">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                    <button class="edit-todo">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button class="remove-todo">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
