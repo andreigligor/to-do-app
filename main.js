@@ -1,29 +1,24 @@
 "use strict";
 
-// Common page variables that will be used throughout the page;
-
 const data = new Date();
-
 const todoForm = document.querySelector("#todo-form");
 const todoInput = document.querySelector("#todo-input");
 const todoList = document.querySelector("#todo-list");
 const editForm = document.querySelector("#edit-form");
 const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
-
 const todoContainer = document.querySelector(".todo-container");
 const date = document.getElementById("date");
 const hour = document.getElementById("hour");
-
 let oldInputValue;
 
-//To display the current date we will use Date.now() and toDateString()
+//Using Date.now() and toDateString() to display the current date
 
 const timeElapsed = Date.now();
 const today = new Date(timeElapsed);
 document.getElementById("date").innerHTML = today.toDateString();
 
-//To display the current Time creating time() function
+//Creating time() function to display the current time
 
 function time() {
   const data = new Date();
@@ -37,7 +32,7 @@ function time() {
   setTimeout(time, 1000);
 }
 
-//save to localStorage
+//Save to localStorage
 
 const saveToLocalStorage = () => {
   const temp = Array.from(todoList.children).map((child) => ({
@@ -60,7 +55,6 @@ todoForm.addEventListener("submit", (e) => {
 
 const saveTodo = (text, classList) => {
   const todo = document.createElement("div");
-  console.log(classList);
   if (classList) {
     Object.values(classList).forEach((cssClass) =>
       todo.classList.add(cssClass)
@@ -166,11 +160,10 @@ window.onload = () => {
 // dark-mode functionality
 
 const body = document.querySelector("body");
-const btn = document.querySelector(".btn");
-const icon = document.querySelector(".btn__icon");
+const btn = document.querySelector(".btn-dark");
+const icon = document.querySelector(".btn-dark-icon");
 
-//to save the dark mode use the object "local storage".
-
+//Saving the dark mode using the object "local storage".
 //function that stores the value true if the dark mode is activated or false if it's not.
 function store(value) {
   localStorage.setItem("darkmode", value);
@@ -179,7 +172,6 @@ function store(value) {
 //function that indicates if the "darkmode" property exists. It loads the page as we had left it.
 function load() {
   const darkmode = localStorage.getItem("darkmode");
-
   //if the dark mode was never activated
   if (!darkmode) {
     store(false);
@@ -205,10 +197,8 @@ btn.addEventListener("click", () => {
   todoContainer.classList.toggle("darkmode");
   date.classList.toggle("darkmode");
   hour.classList.toggle("darkmode");
-
   //save true or false
   store(body.classList.contains("darkmode"));
-
   if (body.classList.contains("darkmode")) {
     icon.classList.remove("fa-sun");
     icon.classList.add("fa-moon");
@@ -216,7 +206,6 @@ btn.addEventListener("click", () => {
     icon.classList.remove("fa-moon");
     icon.classList.add("fa-sun");
   }
-
   setTimeout(() => {
     icon.classList.remove("animated");
   }, 500);
