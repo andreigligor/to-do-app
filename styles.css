@@ -130,7 +130,7 @@ body {
 }
 
 button {
-  background-color: darkorange;
+  background-color: darksalmon;
   color: #102f5e;
   border: 2px solid #102f5e;
   padding: 0.2rem 0.4rem;
@@ -139,7 +139,7 @@ button {
   justify-content: center;
   align-items: center;
   transition: 0.5s;
-  border: 1px solid #f5880e;
+  border: 1px solid darkgrey;
 }
 
 button:hover {
